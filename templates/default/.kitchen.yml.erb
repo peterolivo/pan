@@ -6,17 +6,8 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: ubuntu-14.04
-
-  - name: windows-2012r2
-    transport:
-      name: winrm
-      port: 5985
-      username: vagrant
-      password: vagrant
-    driver_config:
-      box: windows2012r2
-      box_url: http://my.storage.example.com/path/to/windows2012r2.box
+  - name: centos-5.11
+  - name: centos-6.4
 
 suites:
   - name: default

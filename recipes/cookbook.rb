@@ -8,7 +8,7 @@ cookbook_directories = [
   'recipes',
   'templates/default',
   'files/default',
-  'test/integration/default'
+  'test/integration/default/serverspec/localhost'
 ]
 cookbook_directories.each do |dir|
   directory File.join(cookbook_dir, dir) do
@@ -35,7 +35,7 @@ files_template = [
   'metadata.rb',
   'README.md',
   'CHANGELOG.md',
-  '.kitchen.yml'
+  '.kitchen.yml',
 ]
 files_template.each do |file|
   template File.join(cookbook_dir, file) do
@@ -54,6 +54,11 @@ template "#{cookbook_dir}/attributes/default.rb" do
 end
 template "#{cookbook_dir}/recipes/default.rb" do
   source 'default_recipe.rb.erb'
+  helpers(ChefDK::Generator::TemplateHelper)
+  action :create_if_missing
+end
+template "#{cookbook_dir}/test/integration/default/serverspec/spec_helper.rb" do
+  source 'spec_helper.rb.erb'
   helpers(ChefDK::Generator::TemplateHelper)
   action :create_if_missing
 end
