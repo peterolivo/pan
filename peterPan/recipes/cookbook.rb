@@ -8,6 +8,7 @@ cookbook_directories = [
   'recipes',
   'templates/default',
   'files/default',
+  'data_bags',
   'test/integration/default/serverspec/localhost'
 ]
 cookbook_directories.each do |dir|
