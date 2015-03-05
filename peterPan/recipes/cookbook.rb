@@ -62,3 +62,8 @@ template "#{cookbook_dir}/test/integration/default/serverspec/spec_helper.rb" do
   helpers(ChefDK::Generator::TemplateHelper)
   action :create_if_missing
 end
+template "#{cookbook_dir}/test/integration/default/serverspec/localhost/test_#{context.cookbook_name}_spec.rb" do
+  source 'default_test.rb.erb'
+  helpers(ChefDK::Generator::TemplateHelper)
+  action :create_if_missing
+end

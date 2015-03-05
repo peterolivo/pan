@@ -1,0 +1,7 @@
+name 'peterPan'
+maintainer 'Peter Olivo'
+maintainer_email 'olivopeter@gmail.com'
+license 'Apache2'
+description 'Generates Chef code for Chef DK'
+long_description 'Generates Chef code for Chef DK for RHEL with testing'
+version '1.0.1'
